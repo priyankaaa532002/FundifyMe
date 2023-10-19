@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {ethers} from "ethers";
 
-const contractAddress = "0xEf6bb08dbDb43cb6633F84876E34853309366bd9";
+const contractAddress = "0xbDe118fE19d8eD04cEaC35A22dA7759b576D76Ac";
 const abi = [
 	{
 		"anonymous": false,
@@ -105,7 +105,7 @@ const abi = [
 	}
 ]
 
-export default function Scroll() {
+export default function Mantle() {
     const [arr, set_array] = useState([]);
 
     async function getAllTransactions() {
@@ -126,27 +126,27 @@ export default function Scroll() {
       };
     
       const tableRowStyle = {
-        backgroundColor: '#A6BB8D',
+        backgroundColor: '#393E46',
       };
     
       const tableRowStyle2 = {
-        backgroundColor: '#61876E',
+        backgroundColor: '#222831',
       };
     
       const tableCellStyle = {
         padding: '10px',
-        borderBottom: '2px solid white',
+        borderBottom: '2px solid black',
         textAlign: 'center',
       };
+  
+      
     useEffect(() => {
         getAllTransactions();
     }, []);
-      
-
     return (
         <div className="about">
             <br></br>
-            {/* <button onClick={getAllTransactions}>Get Scroll</button> */}
+            {/* <button onClick={getAllTransactions}>Get Mantle</button> */}
             <br></br>
             <center>
             <table className="table" style={myStyle}>

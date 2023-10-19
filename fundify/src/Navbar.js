@@ -1,23 +1,27 @@
 import './index.css';
+import {Link , useMatch , useResolvedPath} from "react-router-dom"
 
 export default function Navbar(){
     return <nav className="nav">
-        <a href="/" className="site-title">FundifyMe</a>
+        <Link to="/" className="site-title">FundifyMe</Link>
         <ul>
-            <CustomLink class="hover-underline-animation" href="/About">About</CustomLink>
-            <CustomLink class="hover-underline-animation" href="/Admin">Admin</CustomLink>
-            <CustomLink class="hover-underline-animation" href="/Dashboard">Dashboard</CustomLink>
+            <CustomLink class="hover-underline-animation" to="/Dashboard">Dashboard</CustomLink>
+            <CustomLink class="hover-underline-animation" to="/Admin">Admin</CustomLink>
+            <CustomLink class="hover-underline-animation" to="/Funding">Mantle</CustomLink>
+            <CustomLink class="hover-underline-animation" to="/About">Scroll</CustomLink>
         </ul>
     </nav>
 }
 
-function CustomLink({ href, children, ...props}) {
-    const path = window.location.pathname
+function CustomLink({ to, children, ...props}) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({path: resolvedPath.pathname, end:true})
+
     return (
-        <li className={path === href ? "active" : ""}>
-            <a href={href} {...props}>
+        <li className={isActive ? "active" : ""}>
+            <Link to={to} {...props}>
                 {children}
-            </a>
+            </Link>
         </li>
     )
 }

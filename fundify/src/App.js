@@ -1,33 +1,27 @@
-import './index.css';
 import Navbar from './Navbar';
 import Home from "./pages/Home"
 import Admin from "./pages/Admin"
 import About from "./pages/About"
 import Dashboard from "./pages/Dashboard"
+import Funding from "./pages/Funding"
+import {Route, Routes} from "react-router-dom"
 
 
 
 function App() {
-  let component
-  switch (window.location.pathname){
-    case "/":
-      component = <Home />
-      break
-    case "/Dashboard":
-      component = <Dashboard />
-      break
-    case "/About":
-      component = <About />
-      break
-    case "/Admin":
-      component = <Admin />
-      break
-  }
+
   return (
     <>
     <Navbar />
     <div className="container">
-      {component}
+      {/* {component} */}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/About' element={<About />} />
+        <Route path='/Admin' element={<Admin />} />
+        <Route path='/Dashboard' element={<Dashboard />} />
+        <Route path='/Funding' element={<Funding />} />
+      </Routes>
     </div>
     </>
   );
