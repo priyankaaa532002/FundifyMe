@@ -100,7 +100,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
-    // createRecord();
+    createRecord();
 
     setFormData({
       id: '',
