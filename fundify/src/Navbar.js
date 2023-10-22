@@ -6,7 +6,7 @@ export default function Navbar(){
         <Link to="/" className="site-title">FundifyMe</Link>
         <ul>
             <CustomLink class="hover-underline-animation" to="/Dashboard">Dashboard</CustomLink>
-            <CustomLink class="hover-underline-animation" to="/Admin">Admin</CustomLink>
+            <CustomLink class="hover-underline-animation" to="/Admin">Add Idea</CustomLink>
             <CustomLink class="hover-underline-animation" to="/Funding">Mantle</CustomLink>
             <CustomLink class="hover-underline-animation" to="/About">Scroll</CustomLink>
         </ul>

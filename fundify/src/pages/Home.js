@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import './boxes.css'
-import image from './rocket.png'
 export default function Home() {
 
     // const [walletAddress, setWalletAddress] = useState("");
@@ -26,10 +25,13 @@ export default function Home() {
         <div>
             <br></br><br></br><br></br><br></br><br></br><br></br>
             <div className='title'>
-                Revolutionizing Funding:<br></br>
-                <span className='spann'>Fundify Me</span>, Where Blockchain Meets Dreams
+            Empowering Dreams with Blockchain:<br></br><span className='spann'>Fundify Me</span>, Your Path to Funding Success!
+            <div className='sub'>
+            Discover the most inspiring ideas that fuel your passion and support them to reach new heights, or step up and be the visionary who shares your own innovation!
+            <br></br><br></br>
+            <button className='button-19'>GET STARTED</button>
             </div>
-            {/* <img src={image}/> */}
+            </div>
             <ul className="circles">
                         <li></li>
                         <li></li>

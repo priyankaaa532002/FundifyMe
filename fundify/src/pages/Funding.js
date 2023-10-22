@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import {ethers} from "ethers";
+import './table.css';
 
 const contractAddress = "0xbDe118fE19d8eD04cEaC35A22dA7759b576D76Ac";
 const abi = [
@@ -124,21 +125,6 @@ export default function Mantle() {
         maxWidth: '1200px',
         margin: '0 auto',
       };
-    
-      const tableRowStyle = {
-        backgroundColor: '#393E46',
-      };
-    
-      const tableRowStyle2 = {
-        backgroundColor: '#222831',
-      };
-    
-      const tableCellStyle = {
-        padding: '10px',
-        borderBottom: '2px solid black',
-        textAlign: 'center',
-      };
-  
       
     useEffect(() => {
         getAllTransactions();
@@ -146,16 +132,15 @@ export default function Mantle() {
     return (
         <div className="about">
             <br></br>
-            {/* <button onClick={getAllTransactions}>Get Mantle</button> */}
             <br></br>
             <center>
-            <table className="table" style={myStyle}>
+            <table className="container" style={myStyle}>
             <thead>
-        <tr style={tableRowStyle2}>
-            <th style={tableCellStyle}>FROM ADDRESS</th>
-            <th style={tableCellStyle}>TO ADDRESS</th>
-            <th style={tableCellStyle}>AMOUNT(in wei)</th>
-            <th style={tableCellStyle}>TIME</th>
+        <tr>
+            <th>FROM ADDRESS</th>
+            <th>TO ADDRESS</th>
+            <th>AMOUNT(in wei)</th>
+            <th>TIME</th>
           </tr>
         </thead>
         <tbody>
@@ -163,11 +148,11 @@ export default function Mantle() {
             arr.map(
               (info, ind) => {
                 return (
-                  <tr style={tableRowStyle}>
-                    <td style={tableCellStyle}>{info[0]}</td>
-                    <td style={tableCellStyle}>{info[1]}</td>
-                    <td style={tableCellStyle}>{info[2].toNumber()}</td>
-                    <td style={tableCellStyle}>{info[3].toNumber()}</td>
+                  <tr>
+                    <td>{info[0]}</td>
+                    <td>{info[1]}</td>
+                    <td>{info[2].toNumber()}</td>
+                    <td>{info[3].toNumber()}</td>
                   </tr>
                 )
               }

@@ -128,33 +128,19 @@ export default function Dashboard() {
     
         console.log('value is:', event.target.value);
         };
-    
-    const myStyle = {
-      fontSize: '15px',
-      color: "#fff"
-    };
   
     const myStyleBox = {
       width: '300px',
-      height: '40px',
+      height: '30px',
       borderRadius: '5px',
-      border: '1px solid #345449',
+      border: '1px solid #303245',
       padding: '5px',
       fontSize: '16px',
       marginLeft : '.9rem',
+      background : '#303245',
+      color: '#fff'
     };
   
-    // const myStyle2 = {
-    //   display: 'inline-flex',
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   width: '1000px',
-    //   height: '100px',
-    //   borderRadius: '5px',
-    //   padding: '20px',
-    //   fontSize : '20px',
-    // };
-
     function donateNGO(address) {
       donate(address)
     } 
@@ -199,14 +185,15 @@ export default function Dashboard() {
     <div className="about">
       <center>
       <div>
-      <p style={myStyle}>Enter amount you wish to donate:</p> 
+      <p>Enter amount you wish to fund : </p> 
       <input type="text" style={myStyleBox} onChange={handleChange} value={amt} placeholder="Enter your amount in ETH" autoComplete="off"></input>
       </div>
-      </center>
+      <br></br>
       <div>
       <label>
         <input
           type="radio"
+          className="check"
           value="Scroll"
           checked={selectedOption === 'Scroll'}
           onChange={() => setSelectedOption('Scroll')}
@@ -217,6 +204,7 @@ export default function Dashboard() {
         <input
           type="radio"
           value="Mantle"
+          className="check"
           checked={selectedOption === 'Mantle'}
           onChange={() => setSelectedOption('Mantle')}
         />
@@ -226,17 +214,19 @@ export default function Dashboard() {
         Selected option: {selectedOption}
       </div>
     </div>
+      </center>
+    <br></br>
       <center>
       <div className="flex-container">
       {results.map((obj, index) => (
           <div className="card" key={index}>
-            <b><p id="title_para">{obj.name} id = {obj.id}</p></b>
+            <b><p id="title_para">{obj.name} ID : {obj.id}</p></b>
             <div className="card-in">
-              <p><b>Description:</b> {obj.description}</p>
-              <p><b>Phone:</b> {obj.phone}</p>
-              <p><b>NGO Wallet Address:</b> {obj.address}</p>
+              <p><b>Startup Idea:</b> {obj.description}</p>
+              <p><b>Phone Number:</b> {obj.phone}</p>
+              <p><b>Wallet Address:</b> {obj.address}</p>
             </div>
-          <center><button class="button-19" onClick={() => donateNGO(obj.address)}>Donate Now</button> </center>
+          <center><button class="button-19" onClick={() => donateNGO(obj.address)}>FUND HERE</button> </center>
           </div>
       ))}
       </div>
