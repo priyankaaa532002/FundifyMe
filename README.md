@@ -17,5 +17,5 @@ Add .env file and add Private Key and mnemonic
 >> Import necessary libraries before running the above command
 
 ## Contract Addresses
-contractAddressScroll = 0xEf6bb08dbDb43cb6633F84876E34853309366bd9
+contractAddressScroll = 0xEf6bb08dbDb43cb6633F84876E34853309366bd9 <br>
 contractAddressMantle = 0xbDe118fE19d8eD04cEaC35A22dA7759b576D76Ac
